@@ -97,21 +97,25 @@ export function RegisterForm ({
                                     type="button"
                                     disabled={isPending}
 
-                                >Continue with Google
+                                >
+                                <Image alt="google" src="/logos/google.svg" height={20} width={20}/>
+                                Continue with Google
                                 </Button>
                                 <Button 
                                     variant="outline"
                                     className="w-full"
                                     type="button"
                                     disabled={isPending}
-                                >Continue with Github
+                                >
+                                <Image alt="github" src="/logos/github.svg" height={20} width={20}/>
+                                Continue with Github
                                 </Button>
                             </div>
                             <div className=" p-4 w-full flex flex-col items-center justify-center">
                                 <fieldset className="w-full max-w-xs flex flex-col">
                                 <FieldGroup className="flex flex-col gap-4 items-center justify-center">
                                     <Field>
-                                        <FieldLabel htmlFor="email" className="text-2xl font-semibold" >Email</FieldLabel>
+                                        <FieldLabel htmlFor="email" className="text-2xl font-semibold " >Email</FieldLabel>
                                         <Input id="username" type="email" placeholder="m@example.com" {...form.register("email")}/>
                                         {errors.email ? (
                                             <p className="text-sm text-red-500 font-medium mt-1">{errors.email.message}</p>): (
