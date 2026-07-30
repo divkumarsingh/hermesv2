@@ -23,11 +23,28 @@ export default  function Home() {
       queryClient.invalidateQueries(trpc.getWorkflows.queryOptions());
     }
   }));
+  const testAi = useMutation(trpc.testAi.mutationOptions({
+    onSuccess: () => {
+      toast.success("Job Added" );
+    } 
+  }));
+
+  console.log(testAi);
+
+  if(data.isLoading){
+      return(
+          <div className="text-6xl text-center ">Loading...</div>  
+    
+      )
+    }
   return (
+
     <div className="min-h-screen min-w-screen flex flex-col items-center justify-center ">
       <div>
         {JSON.stringify(data.data, null, 2)}
       </div>
+      <div>{JSON.stringify(testAi)}</div>
+      <Button disabled={testAi.isPending} onClick={() => testAi.mutate()}>TEST AI</Button>
       <Button disabled={create.isPending} onClick={()=> create.mutate() }>Create Workflow</Button>
     </div>
   );
