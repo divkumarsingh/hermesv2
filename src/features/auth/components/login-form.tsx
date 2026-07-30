@@ -66,6 +66,7 @@ export function LoginForm ({
 
     const isPending = form.formState.isSubmitting;
     const {errors} = form.formState;
+    console.log(errors);
 
     return(
         <div className="flex flex-col gap-2">
@@ -116,7 +117,7 @@ export function LoginForm ({
                                     </Field>
                                     <Field>
                                         <FieldLabel htmlFor="password" className="text-2xl font-semibold" >Password</FieldLabel>
-                                        <Input id="password" type="password" placeholder="******"></Input>
+                                        <Input id="password" type="password" placeholder="******" {...form.register("password")}></Input>
                                         {errors.password ? (
                                             <p className="text-sm text-red-500 font-medium mt-1">{errors.password.message}</p>
                                         ): (

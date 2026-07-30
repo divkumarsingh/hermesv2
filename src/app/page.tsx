@@ -26,6 +26,9 @@ export default  function Home() {
   const testAi = useMutation(trpc.testAi.mutationOptions({
     onSuccess: () => {
       toast.success("Job Added" );
+    },
+    onError: () => {
+      toast.error("Something went wrong")
     } 
   }));
 
