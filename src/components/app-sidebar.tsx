@@ -26,7 +26,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { toast } from "sonner";
-import { useHasActiveSubscription } from "./subscription/hooks/use-subscription";
+import { useHasActiveSubscription } from "../features/subscription/hooks/use-subscription";
 
 const menuItems = [
     {
