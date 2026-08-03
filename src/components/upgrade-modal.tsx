@@ -22,7 +22,7 @@ export const UpgradeModal = ({
     onOpenChange
 }: UpgradeModelProps) => {
     return(
-        <AlertDialog>
+        <AlertDialog open={open ?? false } onOpenChange={onOpenChange}>
             <AlertDialogContent>
                 <AlertDialogContent>
                     <AlertDialogHeader>

@@ -5,7 +5,7 @@ import {UpgradeModal} from "@/components/upgrade-modal"
 import { useState } from "react";
 
 export const useUpgradeModal = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
 
     const handleError = (error: unknown) => {
         if(error instanceof TRPCClientError){
